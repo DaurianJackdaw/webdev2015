@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -33,6 +33,9 @@ gem 'mongoid'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Use Bootsy as content editor
+# gem 'bootsy'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -12,6 +12,7 @@ class Ability
         can :read, :all
         can :create, Post
         can :reply, Post
+        can :manage, :all
       end
     #
     # The first argument to `can` is the action you are giving the user
