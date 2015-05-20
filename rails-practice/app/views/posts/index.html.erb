@@ -3,7 +3,7 @@
         <% @pages.each do |post| %>
         <div class="container">
             <h2><%= link_to post.title, post %></h2>
-            <p><small>Published at <%= post.created_at %>.</small></p>
+            <p><small>Published at <%= post.created_at.getlocal.strftime('%Y-%-m-%-d, %k:%M') %>.</small></p>
             <% if post.body != nil %>
             <article><%= post.body.html_safe %></article>
             <% else %>

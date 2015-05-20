@@ -11209,3 +11209,35 @@ Processing by PostsController#show as HTML
   MOPED: 127.0.0.1:27017 COMMAND      database=rails_test_development command={:count=>"replies", :query=>{"post_id"=>BSON::ObjectId('5528df505975630a5a040000')}} runtime: 0.4040ms
   Rendered posts/show.html.erb within layouts/application (8.2ms)
 Completed 200 OK in 80ms (Views: 72.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2015-05-20 23:59:13 +0800
+Processing by PostsController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3980ms
+  MOPED: 127.0.0.1:27017 QUERY        database=rails_test_development collection=posts selector={} flags=[] limit=10 skip=0 batch_size=nil fields=nil runtime: 0.9680ms
+  MOPED: 127.0.0.1:27017 KILL_CURSORS cursor_ids=[26020922832] runtime: 0.1120ms
+  MOPED: 127.0.0.1:27017 QUERY        database=rails_test_development collection=replies selector={"post_id"=>{"$in"=>[BSON::ObjectId('5528df505975630a5a1c0000'), BSON::ObjectId('5528df505975630a5a260000'), BSON::ObjectId('5528df505975630a5a140000'), BSON::ObjectId('5528df505975630a5a000000'), BSON::ObjectId('5528df505975630a5a180000'), BSON::ObjectId('5528df505975630a5a1e0000'), BSON::ObjectId('5528df505975630a5a100000'), BSON::ObjectId('5528df505975630a5a200000'), BSON::ObjectId('5528df505975630a5a220000'), BSON::ObjectId('5528df505975630a5a240000')]}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6410ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails_test_development command={:count=>"posts", :query=>{}} runtime: 0.4070ms
+  Rendered posts/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 106ms (Views: 101.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2015-05-20 23:59:15 +0800
+Processing by PostsController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails_test_development collection=posts selector={} flags=[] limit=10 skip=0 batch_size=nil fields=nil runtime: 0.7290ms
+  MOPED: 127.0.0.1:27017 KILL_CURSORS cursor_ids=[26785042658] runtime: 0.1100ms
+  MOPED: 127.0.0.1:27017 QUERY        database=rails_test_development collection=replies selector={"post_id"=>{"$in"=>[BSON::ObjectId('5528df505975630a5a1c0000'), BSON::ObjectId('5528df505975630a5a260000'), BSON::ObjectId('5528df505975630a5a140000'), BSON::ObjectId('5528df505975630a5a000000'), BSON::ObjectId('5528df505975630a5a180000'), BSON::ObjectId('5528df505975630a5a1e0000'), BSON::ObjectId('5528df505975630a5a100000'), BSON::ObjectId('5528df505975630a5a200000'), BSON::ObjectId('5528df505975630a5a220000'), BSON::ObjectId('5528df505975630a5a240000')]}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5790ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails_test_development command={:count=>"posts", :query=>{}} runtime: 0.3750ms
+  Rendered posts/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 77ms (Views: 72.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2015-05-20 23:59:30 +0800
+Processing by PostsController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4160ms
+  MOPED: 127.0.0.1:27017 QUERY        database=rails_test_development collection=posts selector={} flags=[] limit=10 skip=0 batch_size=nil fields=nil runtime: 0.6710ms
+  MOPED: 127.0.0.1:27017 KILL_CURSORS cursor_ids=[26033678004] runtime: 0.1390ms
+  MOPED: 127.0.0.1:27017 QUERY        database=rails_test_development collection=replies selector={"post_id"=>{"$in"=>[BSON::ObjectId('5528df505975630a5a1c0000'), BSON::ObjectId('5528df505975630a5a260000'), BSON::ObjectId('5528df505975630a5a140000'), BSON::ObjectId('5528df505975630a5a000000'), BSON::ObjectId('5528df505975630a5a180000'), BSON::ObjectId('5528df505975630a5a1e0000'), BSON::ObjectId('5528df505975630a5a100000'), BSON::ObjectId('5528df505975630a5a200000'), BSON::ObjectId('5528df505975630a5a220000'), BSON::ObjectId('5528df505975630a5a240000')]}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7030ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails_test_development command={:count=>"posts", :query=>{}} runtime: 0.3500ms
+  Rendered posts/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 82ms (Views: 74.7ms)
