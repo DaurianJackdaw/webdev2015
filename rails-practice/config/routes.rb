@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, path: "auth"
   post "posts/:id/reply" => "posts#reply"
 
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+  
   root to: "posts#index"
   get "abc" => "posts#abc"
   # The priority is based upon order of creation: first created -> highest priority.

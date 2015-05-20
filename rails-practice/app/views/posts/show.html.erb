@@ -1,31 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @post.title %>
-</p>
+</h1>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+  <% if @post.body != nil %>
+  <article>
+  <%= @post.body.html_safe %>
+  </article>
+  <% end %>
+
 <%= @post.author.email if @post.author %>
-<%= action_links %>
 
-<h3>Replys:</h3>
-<ul>
+<% if user_signed_in? %>
+	<%= action_links %>
+<% else %>
+	<%= link_to "Back", posts_path %>
+
+<% end %>
+
+
+<h3>Replies</h3><br>
 	<% @pages.each do |reply|%>
-	<li>
-	<strong> <%= reply.author.try(:email) or "Anonymous" %>:</strong>
-	<%= reply.body %>
-	</li>
+	<div class="reply">
+	<label > <%= reply.author.try(:email) or "Anonymous" %>:</label><br>
+	<article><%= reply.body %><br></article>
+	</div>
 	<% end -%>
 
-</ul>
 	<center class = "centers"><%= paginate @pages %></center>
+	<div class="field">
 	<%= form_for Reply.new, url: reply_post_path do |f|%>
-
-	<%= f.text_area :body %>
-	<%= f.submit %>
-
+	<%= f.text_area :body, class: 'form-control', rows: 5 %><br>
+	<%= f.submit nil, class: 'btn btn-primary' %>
 	<% end -%>	
+
+</div>
+	

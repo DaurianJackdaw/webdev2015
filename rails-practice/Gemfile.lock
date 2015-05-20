@@ -49,6 +49,13 @@ GEM
     byebug (4.0.5)
       columnize (= 0.9.0)
     cancancan (1.10.1)
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -101,6 +108,8 @@ GEM
       moped (~> 2.0.0)
       origin (~> 2.1)
       tzinfo (>= 0.3.37)
+    mongoid-paperclip (0.0.9)
+      paperclip (>= 2.3.6)
     moped (2.0.4)
       bson (~> 2.2)
       connection_pool (~> 2.0)
@@ -111,6 +120,11 @@ GEM
     optionable (0.2.0)
     origin (2.1.1)
     orm_adapter (0.5.0)
+    paperclip (4.2.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -190,12 +204,14 @@ DEPENDENCIES
   better_errors
   byebug
   cancancan
+  ckeditor
   coffee-rails (~> 4.1.0)
   devise
   jquery-rails
   kaminari
   less-rails
   mongoid
+  mongoid-paperclip
   pry-rails
   quiet_assets
   rails (= 4.2.1)

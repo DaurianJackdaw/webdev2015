@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsTest</title>
+  <title>Yuci's Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+  
 </head>
 <body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<ul class="nav navbar-nav navbar-left">
+		<li class="navbar-brand">Yuci Zhou's Blog</li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<% if user_signed_in? %>
+		    <li><p class="navbar-text">Signed in as <%= current_user.email if current_user %>.</p></li>
+		    <li><%= link_to "Sign Out", destroy_user_session_path, data: { method: "delete"} %></li> 
+		    <li><%= link_to "Settings", edit_user_registration_path %></li>
+		    <% else %>
+		    <li><%= link_to "Log In", new_user_session_path  %></li>
+		<% end %>
+	</ul>
+</nav>
+
+
+
+
 <div class="container">
 	<% if notice %>
 	<p class="alert alert-success"><%= notice %></p>
@@ -14,16 +36,8 @@
 	<% if alert %>
 	<p class="alert alert-danger"><%= alert %></p>
 	<% end -%>
-	    <%= current_user.email if current_user %>
-	    <%= link_to "Sign Out", destroy_user_session_path, data: { method: "delete"} %> | 
-	    <%= link_to "Setting", edit_user_registration_path %>
-	<div class="row">
-		<div class="col-md-9"><%= yield %></div>
-		<div class="col-md-3">
-			<h2>About Me</h2>
-			<p>My Name is Yuci Zhou. </p>
-			<p>I'm a film geek, photographer, and a director-wannabe. </p>
-		</div>
+	
+	<%= yield %>
 	</div>
 </div>
 

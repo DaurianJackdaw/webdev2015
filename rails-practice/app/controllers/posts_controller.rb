@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :reply]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   # paginates_per 10
   load_and_authorize_resource
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     reply = @post.replies.create(params[:reply].permit(:body))
     reply.author = current_user
     reply.save
-    redirect_to :back, notice: "reply done"
+    redirect_to :back, notice: "Reply was successfully created."
   end
 
 

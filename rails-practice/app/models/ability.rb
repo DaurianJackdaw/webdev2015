@@ -10,9 +10,14 @@ class Ability
         can :create, :all
       else
         can :read, :all
-        can :create, Post
         can :reply, Post
         can :manage, :all
+        # Always performed
+        # can :access, :ckeditor   # needed to access Ckeditor filebrowser
+
+        # Performed checks for actions:
+        can [:read, :create, :destroy], Ckeditor::Picture
+        can [:read, :create, :destroy], Ckeditor::AttachmentFile
       end
     #
     # The first argument to `can` is the action you are giving the user
